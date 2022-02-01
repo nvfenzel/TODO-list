@@ -1,8 +1,9 @@
-<?php
+<?php session_start();
 
 include('database.php');
 
-$query = "SELECT * from todos";
+$user = $_SESSION['user'];
+$query = "SELECT * from todos WHERE user = '$user'";
 $result = mysqli_query($connection, $query);
 
 if (!$result) {

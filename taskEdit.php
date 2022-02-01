@@ -21,8 +21,3 @@ if (isset($_POST['idEl'])) {
         echo json_encode('se cambio a falso');
     }
 }
-
-// if (!$result) {
-//     die('Consulta fallida' . mysqli_error($connection));
-// }
-// }

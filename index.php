@@ -1,3 +1,10 @@
+<?php session_start();
+
+if (!isset($_SESSION['user'])) {
+    header('Location: users/login.view.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +23,7 @@
 <body>
     <main>
         <h1>TO-DO App</h1>
+        <a href="users/cerrar.php">Cerrar sesión</a>
         <div id="lists"></div>
         <div id="add-container">
             <form action="" id="formitnew">
@@ -27,13 +35,10 @@
                 </select>
             </form>
         </div>
-
         <div id="todos"></div>
-
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
-
 
 </html>
